@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
+import LoginPage from '../components/LoginPage';
 import GenerationPage from '../components/GenerationPage';
 import ExpensesPage from '../components/ExpensePage';
 import PerformancePage from '../components/PerformancePage';
@@ -12,10 +13,32 @@ import InactiveDevicesPage from '../components/InactiveDevicesPage';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const toggleTheme = () => {
     setDarkMode(!darkMode);
   };
+
+  const handleLogin = () => {
+    setIsAuthenticated(true);
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+  };
+
+  // If not authenticated, show login page
+  if (!isAuthenticated) {
+    return (
+      <Router>
+        <div className={`min-h-screen transition-all duration-300
+          ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}
+        >
+          <LoginPage darkMode={darkMode} onLogin={handleLogin} />
+        </div>
+      </Router>
+    );
+  }
 
   return (
     <Router>
@@ -24,7 +47,7 @@ const App = () => {
       >
         {/* Sidebar - fixed height with no scroll */}
         <div className="h-screen sticky top-0">
-          <Sidebar darkMode={darkMode} toggleTheme={toggleTheme} />
+          <Sidebar darkMode={darkMode} toggleTheme={toggleTheme} onLogout={handleLogout} />
         </div>
 
         {/* Main Content - scrollable */}

@@ -10,9 +10,10 @@ import {
   Settings,
   User,
   Smartphone,
+  LogOut,
 } from 'lucide-react';
 
-const Sidebar = ({ darkMode, toggleTheme }) => {
+const Sidebar = ({ darkMode, toggleTheme, onLogout }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [isDevicesOpen, setIsDevicesOpen] = useState(false);
   const [showText, setShowText] = useState(true);
@@ -198,6 +199,16 @@ const Sidebar = ({ darkMode, toggleTheme }) => {
               <span className="transition-opacity duration-300">Settings</span>
             )}
           </NavLink>
+
+          <button
+            onClick={onLogout}
+            className="flex items-center space-x-2 text-white hover:text-red-400 transition-colors duration-300 w-full text-left"
+          >
+            <LogOut className="h-5 w-5" />
+            {isOpen && showText && (
+              <span className="transition-opacity duration-300">Logout</span>
+            )}
+          </button>
         </div>
       </div>
 
