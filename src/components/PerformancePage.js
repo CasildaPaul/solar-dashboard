@@ -17,7 +17,7 @@ const PerformancePage = ({ darkMode }) => {
     healthScore: 0
   });
   const [loading, setLoading] = useState(false);
-  const [error] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     // Start loading
