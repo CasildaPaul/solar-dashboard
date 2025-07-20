@@ -180,6 +180,7 @@ const PerformancePage = ({ darkMode }) => {
       </div>
 
       {error && <div className={`p-4 mb-6 rounded-md ${darkMode ? 'bg-red-900 bg-opacity-50 text-red-300 border border-red-700' : 'bg-red-100 text-red-700 border border-red-200'}`}>{error}</div>}
+      }
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
         <div className={`p-4 rounded-lg shadow ${darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'}`}>
