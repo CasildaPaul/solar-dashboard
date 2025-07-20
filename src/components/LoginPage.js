@@ -95,32 +95,6 @@ const LoginPage = ({ onLogin, darkMode }) => {
           </p>
         </div>
 
-        {/* Demo Credentials */}
-        <div style={{
-          backgroundColor: darkMode ? '#1F2937' : '#F3F4F6',
-          borderRadius: '0.5rem',
-          padding: '0.75rem',
-          marginBottom: '1.5rem',
-          border: `1px solid ${darkMode ? '#374151' : '#E5E7EB'}`
-        }}>
-          <p style={{
-            fontSize: '0.75rem',
-            color: theme.mutedTextColor,
-            marginBottom: '0.5rem',
-            fontWeight: '600'
-          }}>
-            Demo Credentials:
-          </p>
-          <p style={{
-            fontSize: '0.75rem',
-            color: theme.textColor,
-            fontFamily: 'monospace'
-          }}>
-            Email: admin@gmail.com<br />
-            Password: admin1125
-          </p>
-        </div>
-
         {/* Error Message */}
         {error && (
           <div style={{
