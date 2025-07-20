@@ -132,7 +132,7 @@ const ExpensesPage = ({ darkMode }) => {
         clearInterval(realtimeInterval.current);
       }
     };
-  }, [realtimeData.length]);
+  }, [realtimeData.length, realtimeData]);
 
   // Theme colors based on dark mode
   const theme = {

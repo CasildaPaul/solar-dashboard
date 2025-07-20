@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { Zap, AlertTriangle, ThermometerSun, Calendar } from 'lucide-react';
-
-const COLORS = ['#60A5FA', '#34D399', '#FBBF24', '#F87171', '#A78BFA'];
-const CHART_LINE_COLOR = '#8884d8';
-const CHART_BAR_COLORS = {
-  efficiency: '#8884d8',  // Purple for actual efficiency
-  expected: '#82ca9d'     // Green for expected efficiency
-};
+import { Zap, AlertTriangle, Calendar } from 'lucide-react';
 
 const PerformancePage = ({ darkMode }) => {
   const [timeframe, setTimeframe] = useState('week');
@@ -24,7 +17,7 @@ const PerformancePage = ({ darkMode }) => {
     healthScore: 0
   });
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error] = useState(null);
 
   useEffect(() => {
     // Start loading

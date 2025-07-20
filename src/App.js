@@ -4,7 +4,6 @@ import './index.css';
 
 const App = () => {
   return (
-    
     <div>
       <SolarDashboard />
     </div>
